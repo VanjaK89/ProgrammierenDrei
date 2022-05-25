@@ -1,0 +1,9 @@
+Zeile 1
+Zeile 2
+ohneLNohneLNZeile 3
+Zeile 4
+This is a ffff program with 100 MBThis is a JAVA Program with 100MBZeile 3
+Zeile 5
+ohneLNohneLNZeile 3
+Zeile 4
+This is a ffff program with 100 MBThis is a JAVA Program with 100MB
