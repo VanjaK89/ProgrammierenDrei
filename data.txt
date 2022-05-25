@@ -1,0 +1,3 @@
+Product{ProductName='Cookie', Price=5.99, ProductCategory='Sweets'}
+Product{ProductName='Juice', Price=2.99, ProductCategory='Sweets'}
+Product{ProductName='Choko', Price=6.99, ProductCategory='Sweets'}
