@@ -14,7 +14,7 @@ public class ProductManager {
         products.add(p);
     }
     public void saveToFile(String path) throws IOException {
-        File file = new File(path);
+        File file = new File(path); //umjesto file writer i buffered writer pisem output
         FileWriter fileWriter = new FileWriter(file);
         BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
         for(Product p: products){
