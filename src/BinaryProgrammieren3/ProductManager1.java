@@ -34,27 +34,27 @@ public class ProductManager1 {
         System.out.println("Saving done");
     }
 
-    public void load(String path) throws IOException, ClassNotFoundException {
-
+    public void readFromFile(String path) throws IOException, ClassNotFoundException {
         FileInputStream fileInputStream = new FileInputStream(path);
         ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
         ArrayList<Product1> productList = new ArrayList<>();
 
-        try{
+        try {
             Object object;
-            while((object = objectInputStream.readObject()) != null){
+            while ((object = objectInputStream.readObject()) != null) {
                 Product1 p = (Product1) object;
                 productList.add(p);
                 System.out.println(p);
             }
-        } catch (EOFException | ClassNotFoundException e) {
-            System.out.println("End of File reached");
-        }
-        finally {
+        } catch (EOFException e) {
+            System.out.println("End of File reached.");
+        } finally {
             objectInputStream.close();
         }
-        System.out.println("Final read object data: ");
+        System.out.println("FINAL READ Object data: ");
         System.out.println(productList);
+
+
     }
 
 }

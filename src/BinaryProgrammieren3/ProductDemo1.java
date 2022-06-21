@@ -15,6 +15,6 @@ public class ProductDemo1 {
         manager.add(p3);
 
         manager.save(path);
-        manager.load(path);
+        manager.readFromFile(path);
     }
 }
