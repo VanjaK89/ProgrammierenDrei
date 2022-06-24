@@ -4,7 +4,7 @@ import java.io.File;
 import java.io.IOException;
 
 public class DemoClass {
-    public static void main(String[] args) throws AddressExportException, AddressExportFileAlreadyExistException, IOException, AddressLoadException, AddressLoadWrongFormatException {
+    public static void main(String[] args) {
 
         AddressManager addressManager = new AddressManager();
         String separator = ",";
@@ -20,15 +20,22 @@ public class DemoClass {
         addressManager.add(a3);
         addressManager.add(a4);
 
-        System.out.println();
-        addressManager.exportToCsv(path, separator);
-        System.out.println();
 
 
+
+        try {
+            addressManager.exportToCsv(path, separator);
+        } catch (AddressExportFileAlreadyExistException e) {
+            e.printStackTrace();
+        } catch (AddressExportException e) {
+            e.printStackTrace();
+        }
+
+        System.out.println();
         try{
             addressManager.loadFromCsv(path, separator);
         }
-        catch (AddressLoadWrongFormatException e){
+        catch (AddressLoadWrongFormatException | AddressLoadException e){
             e.printStackTrace();
         }
 //        System.out.println(addressManager.getAddresses().toString());
