@@ -3,7 +3,7 @@ package ThreadWithCounter;
 import java.util.Date;
 
 public class People implements Runnable{
-        private final int sleepInterval = 1000;
+        private final int sleepInterval = 100;
         private int counter = 0;
         private static Object lock = new Object();
 
@@ -11,7 +11,7 @@ public class People implements Runnable{
         public void run() {
             synchronized (lock) {
                     while(counter < 20){
-                        lock.notifyAll();
+                        lock.notify();
                         counter++;
                         System.out.print("[");
                         System.out.print(Thread.currentThread().getName() + " " + " counter: " + counter);
@@ -22,7 +22,7 @@ public class People implements Runnable{
                         } catch (InterruptedException e) {
                             e.printStackTrace();
                         }
-
+                     lock.notify();
                     }
 
                 System.out.println("The End");
