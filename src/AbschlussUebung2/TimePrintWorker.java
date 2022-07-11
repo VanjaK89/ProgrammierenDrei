@@ -4,7 +4,6 @@ import java.util.Date;
 
 public class TimePrintWorker extends Worker{
     private final int timeInterval = 1000;
-    private int counter = 0;
     public TimePrintWorker(String name) {
         super(name);
     }

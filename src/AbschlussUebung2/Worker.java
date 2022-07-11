@@ -1,5 +1,8 @@
 package AbschlussUebung2;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
 public abstract class Worker implements Runnable {
 
     protected String name;
@@ -9,7 +12,7 @@ public abstract class Worker implements Runnable {
         this.name = name;
         shouldRun = true;
     }
-    protected abstract void work() throws InterruptedException;
+    protected abstract void work() throws InterruptedException, IOException;
 
     protected void printStarted(){
         System.out.println("wurde gestartet");

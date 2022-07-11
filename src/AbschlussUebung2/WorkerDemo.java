@@ -5,7 +5,7 @@ import java.util.TreeMap;
 public class WorkerDemo {
     public static void main(String[] args) {
         TimePrintWorker timePrintWorker = new TimePrintWorker("TimePrintWorker");
-        FileReadWorker fileReadWorker = new FileReadWorker("FileReadWorker", "text.txt");
+        FileReadWorker fileReadWorker = new FileReadWorker("FileReadWorker", "data.txt");
 
         Thread t1 = new Thread(timePrintWorker);
         Thread t2 = new Thread(fileReadWorker);
